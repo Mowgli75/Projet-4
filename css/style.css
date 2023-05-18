@@ -80,7 +80,7 @@ margin: 3px 0px;
 
 
 /* partie fonctionnement*/
-a{
+.conteneur-restaurant a{
     text-decoration: none;
     color: black;
 }
@@ -130,6 +130,42 @@ a{
     justify-content: center;
     align-items: center;
 }
+/*** partie loader ***/
+
+.loader{
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#f6f6f6;
+    animation: load 1.3s ease-in-out ;
+    z-index: -1;
+    color:black;
+    font-size: 30px;
+    text-transform: uppercase;
+    transition: opacity 1s ease-in-out;
+}
+
+@keyframes load {
+    0% {
+    visibility: visible;
+    z-index: 5;
+    }
+    99%{ 
+        z-index: 5;
+    }
+    100% {
+    visibility: hidden;
+    z-index: -1;
+    }
+}
+
+
 
 /* partie restaurant */
 
@@ -162,6 +198,10 @@ a{
     background-color: white;
     border-radius: 0px 0px 20px 20px; 
     padding: 10px 10px 5px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .restaurant-content h3{
@@ -179,12 +219,109 @@ article img {
     
 }
 
+/*** ajout animation coeur***/
+
+
+#heart-checkbox{
+display: none;
+}
+#heart-checkbox2{
+    display: none;
+    }
+#heart-checkbox3{
+    display: none;
+    }
+#heart-checkbox4{
+    display: none;
+    }
+#heart-checkbox5{
+    display: none;
+    } 
+
+
+.full-heart {
+    display: none;
+    opacity: 0.5;
+    background: linear-gradient(200.64deg, #9356dc -5.2%, #ff79da 110.74%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    visibility: hidden;
+    padding-right: 15px;
+  }
+  .empty-heart {
+    padding-right: 15px;
+  }
+  
+  
+  #heart-checkbox:checked + label > i.full-heart {
+    display: inline-block;
+    animation: full 0.5s;
+    opacity: 1;
+    visibility: visible;
+  }
+   #heart-checkbox:checked + label > i.empty-heart {
+    display: none;
+  }
+  #heart-checkbox2:checked + label > i.full-heart {
+    display: inline-block;
+    animation: full 0.5s;
+    opacity: 1;
+    visibility: visible;
+  }
+   #heart-checkbox2:checked + label > i.empty-heart {
+    display: none;
+  }
+  #heart-checkbox3:checked + label > i.full-heart {
+    display: inline-block;
+    animation: full 0.5s;
+    opacity: 1;
+    visibility: visible;
+  }
+   #heart-checkbox3:checked + label > i.empty-heart {
+    display: none;
+  }
+  #heart-checkbox4:checked + label > i.full-heart {
+    display: inline-block;
+    animation: full 0.5s;
+    opacity: 1;
+    visibility: visible;
+  }
+   #heart-checkbox4:checked + label > i.empty-heart {
+    display: none;
+  }
+  #heart-checkbox5:checked + label > i.full-heart {
+    display: inline-block;
+    animation: full 0.5s;
+    opacity: 1;
+    visibility: visible;
+  }
+   #heart-checkbox5:checked + label > i.empty-heart {
+    display: none;
+  }
+  @keyframes full {
+    from {
+      opacity: 0.5;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+ 
+
 /* Partie Footer */
 
 footer {
     background-color: #353535;
     color: white;
     padding: 20px 40px;
+}
+
+footer a {
+color: white;
 }
 
 footer h2 {
@@ -214,6 +351,12 @@ footer h2 {
     position: absolute;
     top: 25px;
     left: 30px;
+}
+.heart-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .title-page1{
