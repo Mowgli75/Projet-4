@@ -359,6 +359,7 @@ footer h2 {
     align-items: center;
 }
 
+
 .title-page1{
     box-shadow: none;
 }
@@ -445,12 +446,60 @@ text-align: start;
     flex-direction:row ;
     justify-content: space-between;
     align-items: flex-end;
+    position:relative;
 }
 
 .prix-page1{
     font-weight: 700;
+    
+}
+.checkmark{
+   position: absolute; 
+   visibility: hidden ;
+    right: -15px;
+    top: -15px;
+    width: 0px;
+    height: 180%;
+    border-radius: 0px 15px 15px 0px;
+    background-color: #99E2D0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
 }
 
+.rangement-page1:hover .prix-page1{
+    transform: translateX(-80px);
+}
+.dish-description {
+    width: 90%;
+    transition: all 0.6s;
+}
+
+.dish-description h4{
+text-overflow: ellipsis;
+white-space: nowrap;
+overflow: hidden;
+transition: all 0.6s;
+}
+
+.dish-description p{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: all 0.6s;
+}
+
+.rangement-page1:hover .dish-description{
+        width: 70%;
+        transition: all 0.6s;
+}
+
+.rangement-page1:hover .checkmark{
+    visibility: visible;
+    width: 80px;
+    
+}
 /* partie plats */
 
 .plats-conteneur{
