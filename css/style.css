@@ -6,6 +6,77 @@ body{
     margin: 0;
     padding: 0;
 }
+/*** partie loader ***/
+
+.loader{
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#f6f6f6;
+    animation: load 1.3s ease-in-out ;
+    z-index: -1;
+    color:black;
+    font-size: 30px;
+    text-transform: uppercase;
+   
+}
+
+@keyframes load {
+    0% {
+    visibility: visible;
+    z-index: 5;
+    }
+    99%{ 
+        z-index: 5;
+    }
+    100% {
+    visibility: hidden;
+    z-index: -1;
+    }
+}
+
+.loader-rotate{
+    content: "";
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    border: 10px solid #9356DC;
+    border-radius: 50%;
+    animation: rotate 1s linear infinite
+
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+        border-top-color: #9356dc;
+        border-bottom-color: #9356dc
+        visibility: visible;
+        z-index: 5;
+        opacity: 1;
+    }
+
+    50% {
+        transform: rotate(180deg);
+        border-top-color: #ff79da;
+        border-bottom-color: #ff79da
+        visibility: :visible;
+        z-index: 5;
+        opacity: 1;
+    }
+
+    100% {
+        transform: rotate(360deg);
+        border-top-color: #99e2d0;
+        border-bottom-color: #99e2d0
+    }
+}
 
 /* header */
 h1 {
@@ -130,41 +201,6 @@ margin: 3px 0px;
     justify-content: center;
     align-items: center;
 }
-/*** partie loader ***/
-
-.loader{
-    width: 100%;
-    height: 100%;
-    visibility: hidden;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color:#f6f6f6;
-    animation: load 1.3s ease-in-out ;
-    z-index: -1;
-    color:black;
-    font-size: 30px;
-    text-transform: uppercase;
-    transition: opacity 1s ease-in-out;
-}
-
-@keyframes load {
-    0% {
-    visibility: visible;
-    z-index: 5;
-    }
-    99%{ 
-        z-index: 5;
-    }
-    100% {
-    visibility: hidden;
-    z-index: -1;
-    }
-}
-
 
 
 /* partie restaurant */
@@ -242,7 +278,7 @@ display: none;
 .full-heart {
     display: none;
     opacity: 0.5;
-    background: linear-gradient(200.64deg, #9356dc -5.2%, #ff79da 110.74%);
+    background: linear-gradient(200.64deg, #9356dc, #ff79da);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -296,11 +332,13 @@ display: none;
     display: inline-block;
     animation: full 0.5s;
     opacity: 1;
-    visibility: visible;
-  }
+    visibility: visible; 
+}
    #heart-checkbox5:checked + label > i.empty-heart {
-    display: none;
+    display: none; 
+    padding-right: 70px;
   }
+
   @keyframes full {
     from {
       opacity: 0.5;
@@ -413,8 +451,22 @@ footer h2 {
     padding-bottom: 30px;
     width: 100%;
     position: relative;
+    animation: entrée 2s;
 }
-
+@keyframes entrée {
+    0% {
+        opacity:0 ;
+    }
+    33%% {
+        opacity: 0.3;
+    }
+    66% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
 .titre-entrées-page1{
     font-weight: 100;
@@ -466,6 +518,7 @@ text-align: start;
     justify-content: center;
     align-items: center;
     transition: all 0.5s;
+   
 }
 
 .rangement-page1:hover .prix-page1{
@@ -498,7 +551,7 @@ transition: all 0.6s;
 .rangement-page1:hover .checkmark{
     visibility: visible;
     width: 80px;
-    
+   
 }
 /* partie plats */
 
@@ -511,6 +564,18 @@ transition: all 0.6s;
     padding-bottom: 30px;
     width: 100%;
     position: relative;
+    animation: plats 1.5s;
+}
+@keyframes plats {
+    0% {
+        opacity:0 ;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 .titre-plats-page1 {
     font-weight: 100;
@@ -547,6 +612,18 @@ transition: all 0.6s;
     gap: 10px;
     width: 100%;
     position: relative;
+    animation: desserts 1s;
+}
+@keyframes desserts {
+    0% {
+        opacity:0 ;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .titre-desserts-page1{
@@ -714,7 +791,26 @@ margin-bottom: 0px;
 .button-page1{
     padding: 40px;
 }
+.titre-entrées-page1{
+    padding-left: 40px;
+}
+.ligne-entrées-page1{
+left: 40px;
+}
 
+.titre-plats-page1{
+    padding-left: 40px;
+}
+
+.ligne-plats-page1{
+    left: 40px;
+}
+.titre-desserts-page1{
+    padding-left: 40px;
+}
+.ligne-desserts-page1{
+    left: 40px;
+}
 
 }
 
@@ -751,6 +847,27 @@ footer h2 {
 footer {
     height: 80px;
     gap: 50px;
+}
+
+.titre-entrées-page1{
+    padding-left: 60px;
+}
+.ligne-entrées-page1{
+left: 60px;
+}
+
+.titre-plats-page1{
+    padding-left: 60px;
+}
+
+.ligne-plats-page1{
+    left: 60px;
+}
+.titre-desserts-page1{
+    padding-left: 60px;
+}
+.ligne-desserts-page1{
+    left: 60px;
 }
 
 }
