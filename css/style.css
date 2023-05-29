@@ -56,8 +56,7 @@ body{
     0% {
         transform: rotate(0deg);
         border-top-color: #9356dc;
-        border-bottom-color: #9356dc
-        visibility: visible;
+        border-bottom-color: #9356dc;   
         z-index: 5;
         opacity: 1;
     }
@@ -65,8 +64,7 @@ body{
     50% {
         transform: rotate(180deg);
         border-top-color: #ff79da;
-        border-bottom-color: #ff79da
-        visibility: :visible;
+        border-bottom-color: #ff79da;
         z-index: 5;
         opacity: 1;
     }
@@ -74,7 +72,7 @@ body{
     100% {
         transform: rotate(360deg);
         border-top-color: #99e2d0;
-        border-bottom-color: #99e2d0
+        border-bottom-color: #99e2d0;
     }
 }
 
@@ -275,7 +273,7 @@ display: none;
     } 
 
 
-.full-heart {
+i.full-heart {
     display: none;
     opacity: 0.5;
     background: linear-gradient(200.64deg, #9356dc, #ff79da);
@@ -288,7 +286,7 @@ display: none;
     padding-right: 15px;
   }
   .empty-heart {
-    padding-right: 15px;
+    padding-right:15px;
   }
   
   
@@ -336,7 +334,6 @@ display: none;
 }
    #heart-checkbox5:checked + label > i.empty-heart {
     display: none; 
-    padding-right: 70px;
   }
 
   @keyframes full {
@@ -377,7 +374,7 @@ footer h2 {
 }
 
 
-/**** Page La palette du gout****/
+/********* Page menu 1,2,3 et 4 *********/
 
 .main-page1{
     background-color: #f6f6f6;
@@ -457,7 +454,7 @@ footer h2 {
     0% {
         opacity:0 ;
     }
-    33%% {
+    33% {
         opacity: 0.3;
     }
     66% {
@@ -491,6 +488,7 @@ border-radius: 15px;
 padding: 15px;
 box-shadow: 0px 4px 15px rgba(0,0,0,.2);
 text-align: start;
+overflow: hidden;
 }
 
 .rangement-page1{
@@ -503,7 +501,7 @@ text-align: start;
 
 .prix-page1{
     font-weight: 700;
-    
+    transition: all 0.5s;
 }
 .checkmark{
    position: absolute; 
@@ -518,6 +516,7 @@ text-align: start;
     justify-content: center;
     align-items: center;
     transition: all 0.5s;
+    font-size: 0;
    
 }
 
@@ -544,14 +543,14 @@ transition: all 0.6s;
 }
 
 .rangement-page1:hover .dish-description{
-        width: 70%;
+        width: 65%;
         transition: all 0.6s;
 }
 
 .rangement-page1:hover .checkmark{
     visibility: visible;
     width: 80px;
-   
+   font-size: 16px;
 }
 /* partie plats */
 
@@ -680,9 +679,7 @@ transition: all 0.6s;
 /*** Partie media queries tablette***/
 
 @media screen and (min-width: 768px) {
-body{
-    width: 1024px;
-}
+
 h1 {
     height: 90px;
     box-shadow: none;
@@ -733,7 +730,7 @@ h1 {
 
 .media-rangement-restaurant{
     display: grid;
-    grid-template-columns: 400px 400px;
+    grid-template-columns : minmax(300px,400px) minmax(300px,400px);
     gap: 60px;
 
 }
@@ -822,7 +819,8 @@ left: 40px;
 @media screen and (min-width:1024px){
     body{
       
-        width: 1440px;
+        max-width: 1440px;
+        margin: auto;
     }
 
 .conteneur-fonctionnement {
